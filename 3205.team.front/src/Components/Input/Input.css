@@ -1,0 +1,22 @@
+.input {
+  width: 100%;
+  padding: 12px 30px;
+  outline: none;
+  font-size: 30px;
+  background-color: transparent;
+  background: rgba(255, 255, 255, 0.16);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(6.2px);
+  -webkit-backdrop-filter: blur(6.2px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+
+  color: black;
+}
+
+.input::placeholder {
+  color: rgb(71, 71, 71);
+}
+
+
+
