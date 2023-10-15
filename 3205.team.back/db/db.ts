@@ -43,7 +43,9 @@ function dbQuery(data: ReqData, res: Response) {
     let { email, number } = data;
     
     result = number ? find(email, number) : findByEmail(email);
-    res.send(result);
+
+    result.length ? res.status(200).send(result) : res.status(400).send('No data found');
+ 
   }, 5000)
 }
 

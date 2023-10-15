@@ -1,0 +1,20 @@
+version: '3.6'
+
+services:
+  front:
+    build:
+      context: ./3205.team.front
+      dockerfile: Dockerfile.front
+    ports:
+      - "5000:5000"
+  back:
+    build:
+      context: ./3205.team.back
+      dockerfile: Dockerfile.back
+    ports:
+      - "5500:5500"
+    depends_on:
+      - front
+
+
+ 
