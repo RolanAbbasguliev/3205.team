@@ -1,3 +1,7 @@
+import { Response } from "express";
+import { debounce, find, findByEmail } from "../utils/utils";
+import { ReqData } from "../types/types";
+
 export const db = [
   {
     email: 'jim@gmail.com',
@@ -26,5 +30,21 @@ export const db = [
   {
     email: 'jill@gmail.com',
     number: '822286',
-  },
+  },  
 ];
+
+
+
+function dbQuery(data: ReqData, res: Response) {
+  console.log("Function execution");
+
+  setTimeout(() => {
+    let result = [];
+    let { email, number } = data;
+    
+    result = number ? find(email, number) : findByEmail(email);
+    res.send(result);
+  }, 5000)
+}
+
+export const dbExec = debounce(dbQuery, 5000);
